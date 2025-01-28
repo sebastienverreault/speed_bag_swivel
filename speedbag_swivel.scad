@@ -103,6 +103,7 @@ $fn = 1000;
 difference(){
 // union(){
     // rotate-extrude it into 3d shape
+    color("grey", 1.5)
     rotate_extrude()
     polygon(points);
 
@@ -114,6 +115,11 @@ difference(){
         [bw_holes_min, 0, -total_h],
         [-bw_holes_min, 0, -total_h],
 
+        [0, bw_holes_mid, -total_h],
+        [0, -bw_holes_mid, -total_h],
+        [bw_holes_mid, 0, -total_h],
+        [-bw_holes_mid, 0, -total_h],
+
         [0, bw_holes_max, -total_h],
         [0, -bw_holes_max, -total_h],
         [bw_holes_max, 0, -total_h],
@@ -123,14 +129,14 @@ difference(){
     translate(coord)
     cylinder(d=holes_diameter, h=3*total_h);
 
-    for(trans_pos = [
-        [[-holes_diameter/2, bw_holes_min, -total_h], [holes_diameter, bw_holes_max - bw_holes_min, 3*total_h]],
-        [[-holes_diameter/2, -bw_holes_max, -total_h], [holes_diameter, bw_holes_max - bw_holes_min, 3*total_h]],
-        [[bw_holes_min, -holes_diameter/2, -total_h], [bw_holes_max - bw_holes_min, holes_diameter, 3*total_h]],
-        [[-bw_holes_max, -holes_diameter/2, -total_h], [bw_holes_max - bw_holes_min, holes_diameter, 3*total_h]],
-    ])
-    color("blue")
-    translate(trans_pos[0])
-    cube(trans_pos[1], center=false);
+    // for(trans_pos = [
+    //     [[-holes_diameter/2, bw_holes_min, -total_h], [holes_diameter, bw_holes_max - bw_holes_min, 3*total_h]],
+    //     [[-holes_diameter/2, -bw_holes_max, -total_h], [holes_diameter, bw_holes_max - bw_holes_min, 3*total_h]],
+    //     [[bw_holes_min, -holes_diameter/2, -total_h], [bw_holes_max - bw_holes_min, holes_diameter, 3*total_h]],
+    //     [[-bw_holes_max, -holes_diameter/2, -total_h], [bw_holes_max - bw_holes_min, holes_diameter, 3*total_h]],
+    // ])
+    // color("blue")
+    // translate(trans_pos[0])
+    // cube(trans_pos[1], center=false);
 
 }
