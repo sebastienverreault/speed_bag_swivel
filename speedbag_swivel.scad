@@ -14,39 +14,7 @@ center_offset = outer_diameter / 2;
 center_hole_diameter = 26;
 center = center_hole_diameter / 2;
 
-/*
-
-  y ^
-    |
-    |            ___
-    |           /   \
-    |          |     \
-    |           \     \
-    |             |    |
-    |             |    |
-    |             |    |
-    |             |    |
-    |             |    |
-    |             |    |
-    |             |    |
-    |             |    |
-    |             |    |__________________________________
-    |             |                                       \
-    |             |                                        |
-    |             |                                        |
-    |             |                                        |
-    |             |                                        |
-    |             |                                        |
-    |             |                                        |
-    |             |                                        |
-    |             |                                        |
-    |             _________________________________________
------------------------------------------------------------------------------> x
-    |
-    |
-   center of rotation
-
-*/
+// TODO: derive below params from ball diameter
 
 // left dimensions (mm)
 lh1 = 1;
